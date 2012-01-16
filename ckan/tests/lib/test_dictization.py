@@ -46,6 +46,7 @@ class TestBasicDictize:
                         'state': u'active',
                         'title': u"Roger's books"}],
             'isopen': True,
+            'language': u'en',
             'license_id': u'other-open',
             'maintainer': None,
             'maintainer_email': None,
@@ -152,7 +153,8 @@ class TestBasicDictize:
             'state': u'active',
             'title': u'A Novel By Tolstoy',
             'url': u'http://www.annakarenina.com',
-            'version': u'0.7a'
+            'version': u'0.7a',
+            'language': u'en'
         }, pprint(result)
 
         ## resource
@@ -837,7 +839,7 @@ class TestBasicDictize:
                       'packages':[{'name': 'annakarenina2'}, {'id': pkg.id, 'capacity': 'in'}],
                       'users':[{'name': 'annafan'}],
                       'groups':[{'name': 'simple'}],
-                      'tags':[{'name': 'russian'}]
+                      'tags':[{'name': 'russian'}],
                       }
 
         model.repo.new_revision()
@@ -887,6 +889,7 @@ class TestBasicDictize:
                                   'capacity' : 'in',
                                   'title': u'A Novel By Tolstoy',
                                   'url': u'http://www.annakarenina.com',
+                                  'language': u'en',                                  
                                   'version': u'0.7a'},
                                  {'author': None,
                                   'author_email': None,
@@ -900,6 +903,7 @@ class TestBasicDictize:
                                   'state': u'active',
                                   'title': u'A Novel By Tolstoy',
                                   'url': u'http://www.annakarenina.com',
+                                  'language': u'en',                                  
                                   'version': u'0.7a'}],
                     'state': u'active',
                     'title': u'help',

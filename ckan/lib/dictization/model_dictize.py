@@ -185,7 +185,7 @@ def package_dictize(pkg, context):
     # Get an actual Package object, not a PackageRevision
     pkg_object = model.Package.get(pkg.id)
     result_dict['isopen'] = pkg_object.isopen if isinstance(pkg_object.isopen,bool) else pkg_object.isopen()
-
+    result_dict['language'] = pkg_object.language
     return result_dict
 
 def _get_members(context, group, member_type):

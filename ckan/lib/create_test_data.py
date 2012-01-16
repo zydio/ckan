@@ -324,6 +324,7 @@ class CreateTestData(cli.CkanCommand):
         pkg1.title = u'A Novel By Tolstoy'
         pkg1.version = u'0.7a'
         pkg1.url = u'http://www.annakarenina.com'
+        pkg1.language = u'en'
         # put an & in the url string to test escaping
         if 'alt_url' in model.Resource.get_extra_columns():
             configured_extras = ({'alt_url': u'alt123'},
@@ -385,6 +386,7 @@ left arrow <
         pkg1.license_id = u'other-open'
         pkg2.license_id = u'cc-nc' # closed license
         pkg2.title = u'A Wonderful Story'
+        pkg2.language = u'en'
         pkg1.extras = {u'genre':'romantic novel',
                        u'original media':'book'}
         # group
