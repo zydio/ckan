@@ -165,6 +165,16 @@
     <dd class="instructions basic">A number representing the version (if applicable)</dd>
     <dd class="hints">e.g. 1.2.0</dd>
 
+    <dt><label class="field_opt" for="language">Language</label></dt>
+	<dd>
+      <select id="language" name="language">
+        <py:for each="language_name, language_code in h.language_codes_pairs()">
+          <option value="${language_code}" py:attrs="{'selected': 'selected' if data.get('language', '') == language_code else None}" >${language_name}</option>
+        </py:for>
+      </select>
+	</dd>
+
+
     <dt py:if="c.is_sysadmin or c.auth_for_change_state"><label class="field_opt" for="state">State</label></dt>
     <dd py:if="c.is_sysadmin or c.auth_for_change_state">
     <select id="state" name="state" >

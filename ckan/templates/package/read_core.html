@@ -75,6 +75,11 @@
           <td class="dataset-details">${c.pkg.version}</td>
         </tr>
 
+        <tr py:if="c.pkg.language">
+          <td class="dataset-label">Language</td>
+          <td class="dataset-details">${h.native_name_for_language_code(c.pkg.language)}</td>
+        </tr>
+
         <tr py:if="c.eu_country">
           <td class="dataset-label">Country</td>
           <td class="dataset-details">${h.code_to_country(c.eu_country)}</td>

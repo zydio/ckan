@@ -94,6 +94,7 @@ def default_package_schema():
         'maintainer_email': [ignore_missing, unicode],
         'license_id': [ignore_missing, unicode],
         'notes': [ignore_missing, unicode],
+        'language': [ignore_missing, unicode],        
         'url': [ignore_missing, unicode],#, URL(add_http=False)],
         'version': [ignore_missing, unicode, package_version_validator],
         'state': [ignore_not_package_admin, ignore_missing],
