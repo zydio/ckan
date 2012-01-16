@@ -168,8 +168,9 @@
     <dt><label class="field_opt" for="language">Language</label></dt>
 	<dd>
       <select id="language" name="language">
-        <py:for each="language_name, language_code in h.language_codes_pairs()">
-          <option value="${language_code}" py:attrs="{'selected': 'selected' if data.get('language', '') == language_code else None}" >${language_name}</option>
+">
+        <py:for each="locale in h.get_available_locales()">
+          <option value="${str(locale)}" py:attrs="{'selected': 'selected' if data.get('language', '') == str(locale) else None}" >${locale.display_name or locale.english_name}</option>
         </py:for>
       </select>
 	</dd>

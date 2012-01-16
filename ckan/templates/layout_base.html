@@ -193,7 +193,7 @@
                              locale=str(locale), 
                              return_to=current_url,
                              hash=current_url_hash)}">
-                  ${locale.display_name or locale.english_name}
+                  ${ locale.display_name or h.native_name_for_locale( str(locale)) }
                 </a>
               </li>
             </ul>

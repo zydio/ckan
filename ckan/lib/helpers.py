@@ -350,28 +350,13 @@ language_patches = {
     'tl': u'Wikang Tagalog',
     'ug': u'Uyƣurqə, ئۇيغۇرچە‎',
     'wo': u'Wollof',
+    'cs_CZ': u'čeština, český jazyk',
+    'sr_Latn': u'српски језик',
 }        
 
-def native_name_for_language_code(code):
+def native_name_for_locale(code):
     """ For the given language code make sure we return the name for that 
         language, in the language we were given. """
     global language_patches        
     return Locale(code).get_display_name(code) or language_patches.get(code)
     
-language_codes = []
-ignore_language_codes = ['dv']
-def language_codes_pairs(lang='en'):
-    """ Return an iterable of tuples which are (nativename, code,) for each
-        language """
-    global language_codes
-    global language_patches
-    
-    if len(language_codes) == 0:
-        codes = [Locale(x) for x in babel.localedata.list() if len(x) == 2 and not x in ignore_language_codes]
-        for locale in codes:
-            if locale.display_name:
-                language_codes.append( (locale.display_name,locale.language))
-            elif locale.language in language_patches:
-                language_codes.append( (language_patches[locale.language],locale.language) )
-    return language_codes
-
