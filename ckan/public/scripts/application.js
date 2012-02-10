@@ -92,6 +92,14 @@
         $(e.target).attr('disabled','disabled');
         return false;
       });
+      
+      // Set up the resource format field (auto-lowercase)
+      var resourceFormatField = $('.resource-edit-value .autocomplete-format');
+      CKAN.Utils.bindInputChanges(resourceFormatField, function(e) {
+        var target = $(e.target);
+        target.val(target.val().toLowerCase());
+      });
+      resourceFormatField.change();
     }
     var isGroupEdit = $('body.group.edit').length > 0;
     if (isGroupEdit) {
